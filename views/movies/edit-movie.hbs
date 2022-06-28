@@ -1,0 +1,25 @@
+<h2>Edit the movie</h2>
+
+<form action="/movies/{{response._id}}/edit" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" value={{ response.title }}>
+    </div>
+    <div class="mb-3">
+        <label for="genre" class="form-label">Genre</label>
+        <input type="text" class="form-control" name="genre" value={{ response.genre }}>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="plot">Plot</label>
+        <input type="text" class="form-control" name="plot" value={{ response.plot }}>
+    </div>
+    <div class="mb-3">
+      <label for="celebrities" class="form-label">Cast</label>
+      <select name="celebrities" class="form-select" multiple aria-label="multiple select example">
+        {{#each celebritiesArray }}
+            <option value="{{_id}}">{{ name }}</option>
+        {{/each}}
+      </select>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit">
+</form>

@@ -1,0 +1,23 @@
+<div class="card" style="width: 50%;">
+  <div class="card-body">
+    <h5 class="card-title">{{ movieDetails.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Genre : {{ movieDetails.genre }}</h6>
+    <p class="card-text">{{ movieDetails.plot }}</p>
+    <p class="card-text"><small class="text-muted">
+        {{#each movieDetails.cast }}
+            {{name}} |
+        {{/each}}
+    </small></p>
+    <form action="/movies/{{movieDetails._id}}/edit" method="get">
+        <input type="submit" class="btn btn-primary" value="Edit">
+    </form>
+    <form action="/movies/{{movieDetails._id}}/delete" method="post">
+        <input type="submit" class="btn btn-primary" value="Delete">
+    </form>
+    
+    
+  </div>
+</div>
+
+
+

@@ -328,13 +328,13 @@ Here are the routes we will be using:
    - Add a `<form>` tag that makes a POST request to `/movies/:id` with the `:id` replaced by the actual movie's _id_.
    - Add `<input>` tags inside the form for each attribute of the movie.
      - **Hint**: When you render the edit form, make sure each of the input fields is pre-filled with the current value of the attribute for that movie
-   - Add `<select>` and `<option>` tags that will handle the cast attribute.
+   - Add `<selec   - Now you can apply different methods - `update()` or `findByIdAndUpdate()` to find the movie and send the updated values to the database.
+t>` and `<option>` tags that will handle the cast attribute.
    - **BONUS**: Make the current cast members _selected_ so the user knows who is in the cast currently.
    - Add a `<button>` tag inside the form so that the user can submit the form once they are done editing.
 4. Create `/movies/:id` POST route in the `routes/movies.routes.js` file
 5. In that route:
    - Create an object with movie's model keys and it's values should come from the form submission (which is `req.body`)
-   - Now you can apply different methods - `update()` or `findByIdAndUpdate()` to find the movie and send the updated values to the database.
    - If there is no error, redirect back to the movie details page.
 
 And we are done! Now all `movies` CRUD features are implemented with a relationship between `movies` and `celebrities`. As a **BONUS**, feel free to also add details view, edit and delete for the `celebrities`.
